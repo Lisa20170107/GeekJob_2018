@@ -21,7 +21,7 @@ echo '<br><br>';
 echo "一個あたりの金額は、" . $_GET['total']/$_GET['count'] ."円です。".'<br>';
 
 // ポイントをつける
-if($_GET['total'] >= 3000 && $_GET['total'] < 4449){
+if($_GET['total'] >= 3000 && $_GET['total'] < 5000){
   echo $_GET['total']*0.04 ."ポイントです。".'<br>';
 }elseif($_GET['total'] >= 5000){
   echo $_GET['total']*0.05 ."ポイントです。".'<br>';
