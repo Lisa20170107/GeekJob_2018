@@ -1,8 +1,8 @@
 <?php
 
 // 総額
-$result_total = $_GET['total']*$_GET['count'];
-echo "総額は、".$result_total."円です。".'<br>';
+
+echo "総額は、".$_GET['total']."円です。".'<br>';
 // 個数
 echo "個数は、".$_GET['count']."個です。".'<br>';
 
@@ -21,10 +21,10 @@ echo '<br><br>';
 echo "一個あたりの金額は、" . $_GET['total']/$_GET['count'] ."円です。".'<br>';
 
 // ポイントをつける
-if($result_total >= 3000 && $result_total < 4449){
-  echo $result_total*0.04 ."ポイントです。".'<br>';
-}elseif($result_total >= 5000){
-  echo $result_total*0.05 ."ポイントです。".'<br>';
+if($_GET['total'] >= 3000 && $_GET['total'] < 4449){
+  echo $_GET['total']*0.04 ."ポイントです。".'<br>';
+}elseif($_GET['total'] >= 5000){
+  echo $_GET['total']*0.05 ."ポイントです。".'<br>';
 }
 
 // 受け取った情報の確認
