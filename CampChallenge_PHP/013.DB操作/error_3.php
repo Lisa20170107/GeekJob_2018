@@ -18,8 +18,26 @@ try {
    $pdo_st = $pdo_obj->prepare($sql2);
    $pdo_st->execute();
 
-   // 実行結果を連想配列で取得
+   // 実行結果を連想配列で取得（要素が1個の配列の中の、0番目の要素が7個のデータが入った配列になってる）
    $datas = $pdo_st->fetchAll(PDO::FETCH_ASSOC);
+
+  //指定して出す場合。[]内の数字で何番目かを指定できる。
+   echo $datas[0]['name'].'<br>';
+   //ループ処理で全て取り出す場合
+   foreach ($datas[0] as $a => $b ){
+     echo $a."　".$b.'<br>';
+   }foreach ($datas[1] as $c => $d ){
+     echo $c."　".$d.'<br>';
+   }foreach ($datas[2] as $e => $f ){
+     echo $e."　".$f.'<br>';
+   }foreach ($datas[3] as $g => $h ){
+     echo $g."　".$h.'<br>';
+   }foreach ($datas[4] as $i => $j ){
+     echo $i."　".$j.'<br>';
+   }foreach ($datas[5] as $k => $l ){
+     echo $k."　".$l.'<br>';
+   }
+
    // 取得結果
    var_dump($datas);
 
