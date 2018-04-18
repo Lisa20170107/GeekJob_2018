@@ -18,8 +18,13 @@ try {
    $pdo_st = $pdo_obj->prepare($sql2);
    $pdo_st->execute();
 
+   // ユーザーテーブルを全て取得する
+  $sql_all = "SELECT * FROM user";
+  $pdo_st_all = $pdo_obj->prepare($sql_all);
+  $pdo_st_all->execute();
+
    // 実行結果を連想配列で取得（要素が1個の配列の中の、0番目の要素が7個のデータが入った配列になってる）
-   $datas = $pdo_st->fetchAll(PDO::FETCH_ASSOC);
+   $datas = $pdo_st_all->fetchAll(PDO::FETCH_ASSOC);
 
   //指定して出す場合。
    echo $datas[0]['name'].'<br>';
