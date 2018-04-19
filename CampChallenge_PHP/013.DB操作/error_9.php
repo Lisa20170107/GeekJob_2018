@@ -34,7 +34,7 @@
       //postでの情報取得確認
       $key = $_POST['txtName'];
 
-       // ユーザーテーブルを全て取得する
+       // ユーザーテーブルから、検索フォームの文字が部分一致したレコードを取得する
       $sql_all = "SELECT * FROM user WHERE name LIKE '%$key%'";
       $pdo_st_all = $pdo_obj->prepare($sql_all);
       $pdo_st_all->execute();
