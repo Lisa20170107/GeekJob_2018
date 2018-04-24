@@ -29,7 +29,7 @@ try {
     $dns .= 'charset=utf8';
 
     // データベースへ接続。
-    $pdo_obj = new PDO($dns, 'bm20170107', 'kosmosurtv');
+    $pdo_obj = new PDO($dns, 'bm20170107', '＊＊＊＊');
     // エラーモード設定
     $pdo_obj->setAttribute(PDO::ATTR_ERRMODE,
                      PDO::ERRMODE_EXCEPTION);
