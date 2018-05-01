@@ -1,4 +1,6 @@
-<?php require_once '../common/defineUtil.php'; ?>
+<?php require_once '../common/defineUtil.php';
+      require_once '../common/scriptUtil.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,5 +13,6 @@
         付随して修正や削除を行うことができます</h3><br>
     <a href="<?php echo INSERT; ?>">新規登録</a><br>
     <a href="<?php echo SEARCH; ?>" >検索(修正・削除)</a><br>
+
 </body>
 </html>
