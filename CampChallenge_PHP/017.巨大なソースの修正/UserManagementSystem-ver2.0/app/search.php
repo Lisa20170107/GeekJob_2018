@@ -8,8 +8,9 @@
       <title>ユーザー情報検索画面</title>
 </head>
   <body>
+    <h1>検索フォーム</h1>
     <form action="<?php echo SEARCH_RESULT ?>" method="GET">
-        
+
         名前:
         <br>
         <input type="text" name="name">
@@ -35,5 +36,7 @@
         <br>
         <input type="submit" name="btnSubmit" value="検索">
       </form>
-  </body>
+      <?php echo return_top(); ?>
+
+</body>
 </html>

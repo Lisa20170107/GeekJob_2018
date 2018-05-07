@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../common/defineUtil.php';
 require_once '../common/scriptUtil.php';
 require_once '../common/dbaccesUtil.php';
@@ -22,7 +22,8 @@ require_once '../common/dbaccesUtil.php';
         $result = null;
         if(empty($_GET['name']) && empty($_GET['year']) && empty($_GET['type'])){
             $result = serch_all_profiles();
-        }else{
+        }
+        else{
             $result = serch_profiles($_GET['name'],$_GET['year'],$_GET['type']);
         }
         foreach($result as $value){
@@ -37,5 +38,6 @@ require_once '../common/dbaccesUtil.php';
         }
         ?>
         </table>
+        <?php echo return_top(); ?>
 </body>
 </html>

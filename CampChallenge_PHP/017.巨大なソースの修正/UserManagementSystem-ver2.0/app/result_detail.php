@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../common/defineUtil.php';
 require_once '../common/scriptUtil.php';
 require_once '../common/dbaccesUtil.php';
@@ -12,11 +12,16 @@ require_once '../common/dbaccesUtil.php';
 </head>
   <body>
     <?php
+    //直リンを禁止する
+    if(empty($_GET['id'])){
+        echo 'アクセスルートが不正です。もう一度トップページからやり直してください<br>';
+    }else{
     $result = profile_detail($_GET['id']);
     //エラーが発生しなければ表示を行う
     if(is_array($result)){
+
     ?>
-      
+
     <h1>詳細情報</h1>
     名前:<?php echo $result[0]['name'];?><br>
     生年月日:<?php echo $result[0]['birthday'];?><br>
@@ -24,19 +29,22 @@ require_once '../common/dbaccesUtil.php';
     電話番号:<?php echo $result[0]['tell'];?><br>
     自己紹介:<?php echo $result[0]['comment'];?><br>
     登録日時:<?php echo date('Y年n月j日　G時i分s秒', strtotime($result[0]['newDate'])); ?><br>
-    
-    <form action="<?php echo UPDATE; ?>" method="POST">
+
+    <form action="<?php echo UPDATE; ?>" method="GET">
+      <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <input type="submit" name="update" value="変更"style="width:100px">
     </form>
-    <form action="<?php echo DELETE; ?>" method="POST">
+    <form action="<?php echo DELETE; ?>" method="GET">
+      <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
         <input type="submit" name="delete" value="削除"style="width:100px">
     </form>
-    
+
     <?php
     }else{
         echo 'データの検索に失敗しました。次記のエラーにより処理を中断します:'.$result;
     }
-    echo return_top(); 
+  }
+    echo return_top();
     ?>
   </body>
 </html>
